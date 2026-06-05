@@ -1,7 +1,8 @@
 Supplementary materials for the REBEL-inspired reward-gap regression loss
-PR in OpenRLHF. The code PR lives at:
-https://github.com/LeoPhilly/OpenRLHF/tree/feat/rebel-loss-dpo
+PR in OpenRLHF.
 
+- **Code PR:** [OpenRLHF#1247](https://github.com/OpenRLHF/OpenRLHF/pull/1247)
+- **Branch:** [`feat/rebel-loss-dpo`](https://github.com/LeoPhilly/OpenRLHF/tree/feat/rebel-loss-dpo) (on my fork)
 ## Contents
 
 - **design_doc.md** — full writeup: motivation, implementation choices,
