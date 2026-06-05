@@ -4,6 +4,8 @@
 
 **Citation:** https://arxiv.org/abs/2404.16767
 
+**PR Link**: https://github.com/OpenRLHF/OpenRLHF/pull/1247
+
 **Summary:** Implemented an offline reward-gap regression loss inspired by REBEL (citation above) into OpenRLHF and compared it to DPO & IPO on Qwen2.5-1.5B-Instruct + UltraFeedback dataset. Note that this is not a paper-faithful implementation of the full REBEL algorithm; it is an offline, one-step proxy inspired by REBEL’s reward-gap regression objective.
 
 ## Contents
