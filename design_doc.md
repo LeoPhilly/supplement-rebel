@@ -122,9 +122,8 @@ Link to other wandb charts: [`wandb_charts.pdf`](https://github.com/LeoPhilly/su
 **Notes:**
 
 - REBEL's final grad norm is roughly 240× larger than DPO's and 1.7×  larger than IPO's. 
-- Loss magnitudes are not directly comparable across the three as these are different objectives(DPO is logistic; IPO and REBEL are squared but on different targets).
+- Loss magnitudes are not directly comparable across the three as these are different objectives (DPO is logistic; IPO and REBEL are squared but on different targets). Moreover, DPO & IPO have preference based objectives whereas REBEL does not. 
 - Eval acc places REBEL (71.9%) between DPO (73.0%) and IPO (68.6%) and hence is comparable.
-- Note that since DPO & IPO have preference based objectives, the loss values are not directly comparable. 
 
 
 ### How was AI used and what did it correct/wrong?
