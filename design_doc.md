@@ -52,6 +52,8 @@ Note that in this iter-1 offline proxy, the old policy is the frozen (SFT) initi
 
 First, note that the optimum/minimizer is the same for both since one is a scalar multiple of the other (specifically scaled by `1/eta**2`). The difference is to be consistent with DPO & IPO's learning rate. If I implemented the paper's loss, the loss magnitude would be deflated by `eta**2` and gradients would be small for a large eta. Hence, REBEL would converge slower than DPO/IPO under identical learning rates. Additionally, this should keep the loss and gradient scale comparable to DPO/IPO. (Empirically, REBEL's gradients still end up ~240× larger than DPO's even with this normalization — see results below) 
 
+Also note that this `*eta` form is not unique to my implementation: the first author's [RLHF 101 tutorial](https://huggingface.co/blog/GitBag/rebel) uses it too. However, the [CMU RLFH 101 Blog](https://blog.ml.cmu.edu/2025/06/01/rlhf-101-a-technical-tutorial-on-reinforcement-learning-from-human-feedback/) of this (also by the authors) instead shows the `1/eta` form. They are equivalent at `eta == 1`.
+
 ### What testing did you do of your implementation?
 
 I added the following 6 unit tests directly into OpenRLHF in the `test_rebel_loss` file. The tests are:
