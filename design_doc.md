@@ -75,6 +75,9 @@ Furthermore, I did a smoke test with Qwen2.5-1.5B-Instruct and ultrafeedback dat
 
 $$\eta = \frac{1/(2\beta)}{\text{median}(\Delta r)} = \frac{5.0}{1.5} = 3.333$$
 
+I chose the median instead of the mean (2.1) because the post-filter margin distribution is right-skewed. The degree of this skew can also be seen by p10 = 0.5 (-1 from median) compared to p90 = 5.0 (+3.5 from median).
+
+
 ### Preprocessing
 
 Using the default `max_len == 512` would have thrown away ~43% of the data, which is quite high. Therefore, I used `max_len == 1024`, which only drops 6% of the data. Moreover, the marginal cost of running with `max_len = 1024` was minimal, and the results would be more accurate too since I didn't want to disproportionately test on smaller length sequences. Ultrafeedback also has a well known length bias which clearly shows here. One additional aspect of preprocessing – I also dropped ties from the data (about 12% of the data) since REBEL loss needs a reward difference in order to meaningfully work.
